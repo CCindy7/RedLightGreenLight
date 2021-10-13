@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Red Light, Green Light</title> 
+  </head>
+
+  <body>
+
+    <div id="instructions">
+      <h1><span id="red">Red </span>Light, <span id="green">Green </span>Light</h1>
+      <p>Welcome to Music Island, where animals move to music sound !
+        <br>
+        Tortillon, a new born turtle have to reach the sea. 
+        <br>
+        Help him with the arrow keys, but beware of crabs.
+        </p>
+      <button type="submit">Play</button>
+      <p id="legal">Music : <a href="https://youtu.be/a98zoxqTJqk">8 Bit Fun by HeatleyBros</a></p>
+    </div>
+    
+    <div id="game">
+      <canvas id="board" width="700px" height="800px"></canvas>
+    </div>
+
+    <div id="sounds">
+      <audio id="normal" src="audios/8 Bit Fun - HeatleyBros 1.mp3"> </audio>
+      <audio id="fast" src="audios/8 Bit Fun - HeatleyBros 2.mp3"> </audio>
+      <audio id="faster" src="audios/8 Bit Fun - HeatleyBros 3.mp3"> </audio>
+      <audio id="ouch" src="audios/ouch.mp3"></audio>
+      <audio id="plouf" src="audios/plouf.mp3"></audio>
+    </div>
+    
+    <script src="js/plane.js"></script>
+    <script src="js/crabs.js"></script>
+    <script src="js/fences.js"></script>
+    <script src="js/turtle.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
