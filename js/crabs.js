@@ -1,21 +1,20 @@
 function random(from, to) {
-    return Math.floor(Math.random() * (to-from) + from);
+  return Math.floor(Math.random() * (to-from) + from);
 }
 
 class Crabs {
   constructor() {
     const img = document.createElement('img');
-      img.onload = () => {
-        this.img = img;
-        const imgRatio = img.naturalWidth/img.naturalHeight;
+    img.onload = () => {
+      this.img = img;
+      const imgRatio = img.naturalWidth/img.naturalHeight;
   
-        this.w = 50;
-        this.h = 50/imgRatio;
-        this.x = random(250, 380);
-        this.y = 280;
-      }
-      img.src= "images/crab.png";
-
+      this.w = 50;
+      this.h = 50/imgRatio;
+      this.x = random(250, 380);
+      this.y = 280;
+    }
+    img.src= "images/crab.png";
   }
 
   draw() {
@@ -34,9 +33,7 @@ class Crabs {
     var crabsBottom = this.y + this.h;
     var crabsTop = this.y;
     
-    
     return((turtleLeft < crabsRight) && (turtleRight > crabsLeft) && (turtleBottom > crabsTop) && (turtleTop < crabsBottom))
-    
   }
 }
 

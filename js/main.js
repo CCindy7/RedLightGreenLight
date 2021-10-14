@@ -2,6 +2,7 @@ let fences;
 let turtle;
 let crabs;
 let gameover;
+let message;
 let win;
 let plane;
 let currentMusic;
@@ -50,21 +51,21 @@ function draw() {
     ctx.shadowOffsetX= 30;
     ctx.beginPath();
     ctx.fillStyle='white';
-    ctx.arc(0, 80, 20, 0, Math.PI, true);
-    ctx.arc(70, 80, 60, 0, Math.PI, true );
-    ctx.arc(150, 80, 40, 0, Math.PI, true );
-    ctx.arc(200, 80, 20, 0, Math.PI, true );
-    ctx.arc(220, 80, 10, 0, Math.PI, true );
+    ctx.arc(0, 75, 20, 0, Math.PI, true);
+    ctx.arc(70, 75, 60, 0, Math.PI, true );
+    ctx.arc(150, 75, 40, 0, Math.PI, true );
+    ctx.arc(200, 75, 20, 0, Math.PI, true );
+    ctx.arc(220, 75, 10, 0, Math.PI, true );
     ctx.fill();
 
   //cloud n°2
     ctx.beginPath();
     ctx.fillStyle='white';
     ctx.shadowOffsetX= 30;
-    ctx.arc(530, 100, 15, 0, Math.PI, true);
-    ctx.arc(570, 100, 30, 0, Math.PI, true );
-    ctx.arc(640, 100, 50, 0, Math.PI, true );
-    ctx.arc(700, 100, 20, 0, Math.PI, true );
+    ctx.arc(530, 60, 15, 0, Math.PI, true);
+    ctx.arc(570, 60, 30, 0, Math.PI, true );
+    ctx.arc(640, 60, 50, 0, Math.PI, true );
+    ctx.arc(700, 60, 20, 0, Math.PI, true );
     ctx.fill();
 
   //turtle
@@ -83,11 +84,8 @@ function draw() {
   crabs.forEach(function(crab){
     if(!currentMusic.ended){
     crab.y += 1;
-    crab.draw();
-    } else {
-    crab.y = crab.y;
-    crab.draw();
     }
+    crab.draw();
   });
 
   for (crab of crabs) {
@@ -97,29 +95,22 @@ function draw() {
         document.getElementById('ouch').play();
         currentMusic.currentTime = 0;
         gameover = true;
-        setTimeout(refresh,3000);
+        setTimeout(refresh,2000);
         function refresh() {
         document.location.reload();
       }
     }
   }
 
-  //plane
-  if (gameover){
+  //Alert when win or lose
+  if (win){
     plane.draw();
-    ctx.fontStyle = "white";
-    ctx.font = "15px Arial";
-    ctx.fillText("Gameover,", 350, 80);
-    ctx.fillText("try again !", 350, 100);
-  } else if (win){
-    plane.draw();
-    ctx.fontStyle = "white";
-    ctx.font = "15px Arial";
-    ctx.fillText("Tortillon is", 350, 70);
-    ctx.fillText("safe,", 350, 90);
-    ctx.fillText("good job !", 350, 110);
+    plane.x += -2;
+  } else if (gameover) {
+    message.draw();
   }
 }
+
  
 //turtle directions
 document.onkeydown = function (e) {
@@ -127,30 +118,30 @@ document.onkeydown = function (e) {
 
   switch (e.key) {
     case 'ArrowUp': 
-      turtle.moveForward();
-        if(currentMusic.ended){
-          turtle.x = 335;
-          turtle.y = 740;
-          alert('Oups Tortillon can\'t move when music is not playing !');
-      }
-      break;
+    turtle.moveForward();
+      if(currentMusic.ended){
+        turtle.x = 335;
+        turtle.y = 740;
+        document.getElementById('malus').play();
+      } 
+    break;
     case 'ArrowLeft':
-      turtle.moveLeft();
+    turtle.moveLeft();
       if (currentMusic.ended){
-         turtle.x = 335;
-         turtle.y = 740;
-         alert('Oups Tortillon can\'t move when music is not playing !');
-      };
-      break;
+        turtle.x = 335;
+        turtle.y = 740;
+        document.getElementById('malus').play();
+      } 
+    break;
     case 'ArrowRight':
-      turtle.moveRight();
+    turtle.moveRight();
       if (currentMusic.ended){
-         turtle.x = 335;
-         turtle.y = 740;
-         alert('Oups Tortillon can\'t move when music is not playing !');
-      }
-      break;
-    }
+        turtle.x = 335;
+        turtle.y = 740;
+        document.getElementById('malus').play();   
+      } 
+    break;
+  }
 }
 
 // random music
@@ -171,7 +162,7 @@ function randomMusic() {
 // quand musique aléatoire se termine, une nouvelle joue à un moment aléatoire compris entre 2 et 4s . Si gameover, la musique s'arrête.
 let int;
 function playMusic(from = 2000, to = 4000) {
-  if (gameover || win){
+  if (gameover || win) {
     clearTimeout(int);
   }
   let randomAudio =  randomMusic();
@@ -180,8 +171,8 @@ function playMusic(from = 2000, to = 4000) {
    int = setTimeout(playMusic, Math.floor(Math.random() * (to-from) + from))
  }
 
-console.log('start playing')
-randomAudio.play();
+  console.log('start playing');
+  randomAudio.play();
 }
 
 // draw animation
@@ -206,14 +197,13 @@ function startGame() {
   turtle = new Turtle();
   fences = new Fences();
   plane = new Plane();
+  message = new Message();
   crabs = [];
   
-  animLoop();
-  
+  animLoop(); 
 }
 
-document.querySelector('button').onclick = function(){
+document.getElementById('button').onclick = function(){
   gameover = false;
   startGame();
-};
-
+}

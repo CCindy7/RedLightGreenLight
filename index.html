@@ -7,8 +7,8 @@
     <title>Red Light, Green Light</title> 
     
     <link rel="stylesheet" href="styles/style.css" />
-    
   </head>
+  
   <body>
 
     <div id="instructions">
@@ -19,7 +19,7 @@
         <br>
         Help him with the arrow keys, but beware of crabs.
         </p>
-      <button type="submit">Play</button>
+      <a id="button">Play</a>
       <p id="legal">Music : <a href="https://youtu.be/a98zoxqTJqk">8 Bit Fun by HeatleyBros</a></p>
     </div>
     
@@ -28,22 +28,16 @@
     </div>
 
     <div id="sounds">
+      <audio id="malus" src="audios/malus.mp3"></audio>
       <audio id="normal" src="audios/8 Bit Fun - HeatleyBros 1.mp3"> </audio>
       <audio id="fast" src="audios/8 Bit Fun - HeatleyBros 2.mp3"> </audio>
       <audio id="faster" src="audios/8 Bit Fun - HeatleyBros 3.mp3"> </audio>
       <audio id="ouch" src="audios/ouch.mp3"></audio>
+      <audio id="movingback" src="audios/movingback.mp3"></audio>
       <audio id="plouf" src="audios/plouf.mp3"></audio>
     </div>
-
-    <div id="images">
-      <link rel="preload" href="images/backgroundimg.png">
-      <link rel="preload" href="images/crab.png">
-      <link rel="preload" href="images/fences.png">
-      <link rel="preload" href="images/fences2.png">
-      <link rel="preload" href="images/plane.png">
-      <link rel="preload" href="images/turtle.png">
-    </div>
     
+    <script src="js/message.js"></script>
     <script src="js/plane.js"></script>
     <script src="js/crabs.js"></script>
     <script src="js/turtle.js"></script>

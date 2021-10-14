@@ -1,9 +1,9 @@
-body{
+body {
     display:flex;
     min-height: fit-content;
     }
 
-canvas{
+canvas {
     background-image: url("../images/backgroundimg.png");
     background-size:cover;
     border: 1px solid;
@@ -24,19 +24,19 @@ canvas{
     padding-left: 50px;
 }
 
-#red{
+#red {
     color:#f5623a;
 }
 
-#green{
+#green {
     color: #9df7ac;
 }
 
-p{
+p {
     font-size:20px;
 }
 
-button{
+#button {
    background-color:#AFF9E7;
    border-radius: 10px;
    border : 4px double #f8f5f5;
@@ -47,7 +47,7 @@ button{
    margin-top: 50px;
 }
 
-#legal{
+#legal {
     font-size: small;
     margin-top: 80px;
 }
