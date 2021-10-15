@@ -21,7 +21,8 @@ class Crabs {
     if (!this.img) return; 
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
-
+  
+  // collision crabe-tortue
   hits(turtle) {
     var turtleLeft = turtle.x;
     var turtleRight = turtle.x + turtle.w;

@@ -20,8 +20,8 @@ class Turtle {
   // tortue avance
   moveForward() {
     this.y += -2;
-      
-    if(this.y < 225){
+    // tortue dépasse la jetée = win => musique actuelle s'arrête, son 'plouf', retour à l'image du début au bout de 7s 
+    if(this.y < 225) {
       console.log('win');
       currentMusic.pause();
       document.getElementById('plouf').play();
@@ -35,10 +35,10 @@ class Turtle {
   }
       
     // tortue va à gauche
-  moveLeft(){
+  moveLeft() {
     this.x += -2;
-      
-    if (this.x < 250){
+    // collision tortue-barrière de gauche = gameover => musique actuelle s'arrête, son 'ouch', retour à l'image du début au bout de 2s  
+    if (this.x < 250) {
       console.log('hits fences - gameover');
       currentMusic.pause();
       document.getElementById('ouch').play();
@@ -52,9 +52,9 @@ class Turtle {
   }
     
     // tortue va à droite
-  moveRight(){
+  moveRight() {
     this.x += 2;
-      
+    //  collision tortue-barrière de droite = gameover => musique actuelle s'arrête, son 'ouch', retour à l'image du début au bout de 2s 
     if (this.x > 420){
       console.log('hits fences - gameover');
       currentMusic.pause();
