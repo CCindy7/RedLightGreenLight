@@ -16,5 +16,4 @@ class Plane {
     if(!this.img) return;
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
-}
-    
+}   

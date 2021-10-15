@@ -32,9 +32,9 @@ class Turtle {
         document.location.reload();
       }
     }
-  }
+  } 
       
-    // tortue va à gauche
+  // tortue va à gauche
   moveLeft() {
     this.x += -2;
     // collision tortue-barrière de gauche = gameover => musique actuelle s'arrête, son 'ouch', retour à l'image du début au bout de 2s  
@@ -51,7 +51,7 @@ class Turtle {
     } 
   }
     
-    // tortue va à droite
+  // tortue va à droite
   moveRight() {
     this.x += 2;
     //  collision tortue-barrière de droite = gameover => musique actuelle s'arrête, son 'ouch', retour à l'image du début au bout de 2s 

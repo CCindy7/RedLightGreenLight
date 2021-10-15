@@ -7,7 +7,6 @@ let win;
 let plane;
 let currentMusic;
 
-
 const ctx = document.querySelector('#board').getContext('2d');
 
 function draw() {
@@ -80,14 +79,14 @@ function draw() {
     var crab = new Crabs();
     crabs.push(crab);
   }
-    // avancent ou s'arrêtent en fonction de la musique
+  // avancent ou s'arrêtent en fonction de la musique
   crabs.forEach(function(crab){
     if(!currentMusic.ended){
     crab.y += 1;
     }
     crab.draw();
-  })
-    // détection de la collision crabe/tortue + son = gameover => retour à l'image de fond après 2s
+  });
+  // détection de la collision crabe/tortue + son = gameover => retour à l'image de fond après 2s
   for(crab of crabs) {
     if(crab.hits(turtle)) {
       console.log('pinched - gameover');
@@ -111,7 +110,6 @@ function draw() {
   }
 }
 
- 
 // déplacements de la tortue
 document.onkeydown = function (e) {
   if (!turtle) return;
@@ -160,7 +158,6 @@ function randomMusic() {
   
   return currentMusic;
 }
-
 
 // quand musique aléatoire se termine, une nouvelle est jouée à un moment aléatoire compris entre 2 et 4s . Si gameover ou win, la musique s'arrête.
 let int;
