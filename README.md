@@ -38,7 +38,7 @@ A plane flies in the sky showing a congratulations message, then the player retu
 ![Playing](https://user-images.githubusercontent.com/87827626/159142915-c24f4e0b-cfaa-4495-a98d-cbef7bb9658b.png)
 <br> <br>
 
-## Game over
+## Loose
 ![Game over](https://user-images.githubusercontent.com/87827626/159142963-a28015cd-7401-4d68-8b3a-118adc840965.png)
 <br><br>
 
