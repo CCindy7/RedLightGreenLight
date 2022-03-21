@@ -31,16 +31,16 @@ A plane flies in the sky showing a congratulations message, then the player retu
 <br><br>
 
 ## Homepage
-![Homepage](https://user-images.githubusercontent.com/87827626/159142884-42ec23fa-d1b2-40bc-9412-93e21bd04df7.png)
+![Homepage (2)](https://user-images.githubusercontent.com/87827626/159366651-6f4e837e-2cd7-443c-96cb-1e097d0074d2.png)
 <br> <br>
 
 ## Playing
-![Playing](https://user-images.githubusercontent.com/87827626/159142915-c24f4e0b-cfaa-4495-a98d-cbef7bb9658b.png)
+![Playing](https://user-images.githubusercontent.com/87827626/159366812-318d33a9-1188-47c3-a61e-81caa0385fdd.png)
 <br> <br>
 
 ## Loose
-![Game over](https://user-images.githubusercontent.com/87827626/159142963-a28015cd-7401-4d68-8b3a-118adc840965.png)
+![Game over](https://user-images.githubusercontent.com/87827626/159366855-ecd25521-828e-4ad8-a27e-fd895e0cedc3.png)
 <br><br>
 
 ## Win
-![Win](https://user-images.githubusercontent.com/87827626/159143018-ade60eb5-2de6-427b-9613-4da4df12710b.png)
+![Win](https://user-images.githubusercontent.com/87827626/159366879-3cb04e86-3d33-4688-9deb-68ac69d30970.png)
